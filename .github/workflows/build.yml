@@ -75,7 +75,6 @@ jobs:
           - 13.1.0
           - 13.0.1
           - 13.0.0
->>>>>>> Stashed changes
     steps:
       - name: Setup nix features
         run: echo "experimental-features = nix-command flakes ca-references" > /etc/nix/nix.conf
