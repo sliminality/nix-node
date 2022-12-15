@@ -13,6 +13,15 @@
               icu = icu68;
               python = python3;
             };
+          v16_15_1 = (buildNodejs {
+            enableNpm = true;
+            version = "16.15.1";
+            sha256 = "0zcv2raa9d4g7dr7v3i2pkfrq076b085f9bmlq4i2wb93wy9vsfl=";
+            patches = [
+              lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/bypass-darwin-xcrun-node16.patch"
+              lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/disable-darwin-v8-system-instrumentation.patch"
+            ];
+          });
           v16_3_0 = (buildNodejs {
             enableNpm = true;
             version = "16.3.0";
